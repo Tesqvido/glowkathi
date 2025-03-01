@@ -17,8 +17,9 @@
             margin: 0 auto;
             padding: 20px;
         }
-         .navbar {
-            background-color: #36393f;
+        /* Navbar Style */
+        .navbar {
+            background-color: #9146FF; /* Twitch Lila */
             padding: 10px;
             border-radius: 8px;
             display: flex;
@@ -26,59 +27,60 @@
             align-items: center;
         }
         .navbar a {
-            color: #7289da;
+            color: white;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 28px;  /* Schriftgröße vergrößert */
-            font-weight: bold;  /* Fett für bessere Sichtbarkeit */
+            font-size: 22px;
+            font-weight: bold;
         }
         .navbar a:hover {
             text-decoration: underline;
         }
+        /* Header Style */
         .header {
-            background-color: #36393f;
-            padding: 10px;
+            background-color: #9146FF; /* Twitch Lila */
+            padding: 20px;
             text-align: center;
             border-radius: 8px;
         }
         .header h1 {
             margin: 0;
+            color: white;
         }
+        /* Category Style */
         .category {
             margin-top: 30px;
         }
         .category h2 {
-            color: #7289da;
-            border-bottom: 2px solid #7289da;
+            color: #9146FF; /* Twitch Lila */
+            border-bottom: 2px solid #9146FF;
             padding-bottom: 5px;
             margin-bottom: 20px;
         }
+        /* Team Member Style */
         .team-member {
-            display: flex;
-            align-items: center;
             background-color: #40444b;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        .team-member img {
-            border-radius: 50%;
-            margin-right: 20px;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
+        .team-member:hover {
+            transform: translateY(-5px);
+            background-color: #5b6071; /* Dunklerer Farbton für Hover-Effekt */
         }
         .team-member .info {
             flex: 1;
         }
         .team-member .info h3 {
             margin: 0;
-            color: #7289da;
+            color: white;
         }
         .team-member .info p {
             margin: 5px 0;
             font-size: 14px;
         }
+        /* Footer Style */
         .footer {
             margin-top: 30px;
             background-color: #2f3136;
@@ -93,7 +95,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <a href="/index.html">Home</a>
-        <a href="/pages/team.html#">Team</a>
+        <a href="/pages/team.html">Team</a>
         <a href="/pages/virale-clips.html">Virale Clips</a>
     </div>
 
@@ -108,7 +110,6 @@
         <div class="category">
             <h2>Admin</h2>
             <div class="team-member">
-                <img src="assets/img/discord_admin1.jpg" alt="Discord Admin 1">
                 <div class="info">
                     <h3>MaxMustermann</h3>
                     <p><strong>Rolle:</strong> Head Discord Admin</p>
@@ -120,41 +121,37 @@
         <div class="category">
             <h2>Mod</h2>
             <div class="team-member">
-                <img src="assets/img/twitch_mod1.jpg" alt="Twitch Mod 1">
                 <div class="info">
                     <h3>echte_melone</h3>
-                    <p><strong>Rolle:</strong>Twitch Mod</p>
+                    <p><strong>Rolle:</strong> Twitch Mod</p>
                 </div>
             </div>
             <div class="team-member">
-                <img src="assets/img/twitch_mod1.jpg" alt="Twitch Mod 1">
                 <div class="info">
                     <h3>glow_jamesbond_007</h3>
-                    <p><strong>Rolle:</strong>Twitch Mod</p>
+                    <p><strong>Rolle:</strong> Twitch Mod</p>
                 </div>
             </div>
             <div class="team-member">
-                <img src="assets/img/twitch_mod1.jpg" alt="Twitch Mod 1">
                 <div class="info">
                     <h3>miggivlr</h3>
-                    <p><strong>Rolle:</strong>Twitch Mod</p>
+                    <p><strong>Rolle:</strong> Twitch Mod</p>
                 </div>
             </div>
             <div class="team-member">
-                <img src="assets/img/twitch_mod1.jpg" alt="Twitch Mod 1">
                 <div class="info">
                     <h3>nussigeenten</h3>
-                    <p><strong>Rolle:</strong>Twitch Mod</p>
+                    <p><strong>Rolle:</strong> Twitch Mod</p>
                 </div>
             </div>
             <div class="team-member">
-                <img src="assets/img/twitch_mod1.jpg" alt="Twitch Mod 1">
                 <div class="info">
                     <h3>yunglukas38</h3>
-                    <p><strong>Rolle:</strong>Twitch Mod</p>
+                    <p><strong>Rolle:</strong> Twitch Mod</p>
                 </div>
             </div>
         </div>
+
         <!-- Footer -->
         <div class="footer">
             <p>&copy; 2025 GlowKathi | Alle Rechte vorbehalten</p>
