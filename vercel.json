@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/index",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/team",
+      "destination": "/pages/team.html"
+    },
+    {
+      "source": "/virale-clips",
+      "destination": "/pages/virale-clips.html"
+    }
+  ]
+}
