@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlowKathi - Twitch Streamerin</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".fade-in-section");
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
     <style>
         body {
             background-color: #2b2d31;
@@ -23,6 +40,15 @@
         .glow {
             box-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
         }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -39,7 +65,7 @@
         </nav>
 
         <!-- Profil -->
-        <div class="flex items-center bg-[#313338] p-6 mt-6 rounded-lg shadow-lg hover-scale">
+        <div class="fade-in-section flex items-center bg-[#313338] p-6 mt-6 rounded-lg shadow-lg hover-scale">
             <img src="assets/img/glowkathi.png" alt="GlowKathi" class="w-24 h-24 rounded-full border-4 border-[#7289da] glow">
             <div class="ml-4">
                 <h2 class="text-xl font-bold text-[#7289da]">GlowKathi</h2>
@@ -52,12 +78,12 @@
 
         <!-- Sektionen -->
         <div class="mt-8 space-y-6">
-            <section class="bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
+            <section class="fade-in-section bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
                 <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Karriere</h3>
                 <p>GlowKathi begann am 9. September 2023 mit dem Streaming auf Twitch und hat seitdem eine stetig wachsende Community aufgebaut.</p>
             </section>
 
-            <section class="bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
+            <section class="fade-in-section bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
                 <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Virale Clips</h3>
                 <ul>
                     <li><strong>"Bin am schwitzen digga"</strong> – Just Chatting, 13. Mai 2024</li>
@@ -65,7 +91,7 @@
                 </ul>
             </section>
 
-            <section class="bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
+            <section class="fade-in-section bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
                 <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Social Media</h3>
                 <div class="flex space-x-4">
                     <a href="https://www.twitch.tv/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Twitch</a>
