@@ -10,13 +10,25 @@
             background-color: #2b2d31;
             color: white;
             font-family: 'Arial', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="container mx-auto px-4">
         <!-- Navbar -->
-        <nav class="bg-[#313338] p-4 rounded-lg flex justify-between items-center shadow-lg">
+        <nav class="bg-[#313338] p-4 rounded-lg flex justify-between items-center shadow-lg hover-scale">
             <h1 class="text-2xl font-bold text-[#7289da]">GlowKathi</h1>
             <div class="space-x-6">
                 <a href="/index" class="text-[#7289da] hover:underline">Home</a>
@@ -27,8 +39,8 @@
         </nav>
 
         <!-- Profil -->
-        <div class="flex items-center bg-[#313338] p-6 mt-6 rounded-lg shadow-lg">
-            <img src="assets/img/glowkathi.png" alt="GlowKathi" class="w-24 h-24 rounded-full border-4 border-[#7289da]">
+        <div class="flex items-center bg-[#313338] p-6 mt-6 rounded-lg shadow-lg hover-scale">
+            <img src="assets/img/glowkathi.png" alt="GlowKathi" class="w-24 h-24 rounded-full border-4 border-[#7289da] glow">
             <div class="ml-4">
                 <h2 class="text-xl font-bold text-[#7289da]">GlowKathi</h2>
                 <p><strong>Geburtsort:</strong> Österreich</p>
@@ -40,12 +52,12 @@
 
         <!-- Sektionen -->
         <div class="mt-8 space-y-6">
-            <section class="bg-[#313338] p-6 rounded-lg shadow-lg">
+            <section class="bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
                 <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Karriere</h3>
                 <p>GlowKathi begann am 9. September 2023 mit dem Streaming auf Twitch und hat seitdem eine stetig wachsende Community aufgebaut.</p>
             </section>
 
-            <section class="bg-[#313338] p-6 rounded-lg shadow-lg">
+            <section class="bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
                 <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Virale Clips</h3>
                 <ul>
                     <li><strong>"Bin am schwitzen digga"</strong> – Just Chatting, 13. Mai 2024</li>
@@ -53,7 +65,7 @@
                 </ul>
             </section>
 
-            <section class="bg-[#313338] p-6 rounded-lg shadow-lg">
+            <section class="bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
                 <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Social Media</h3>
                 <div class="flex space-x-4">
                     <a href="https://www.twitch.tv/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Twitch</a>
