@@ -4,103 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlowKathi - Twitch Streamerin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll(".fade-in-section");
-            
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
     <style>
         body {
-            background-color: #2b2d31;
-            color: white;
             font-family: 'Arial', sans-serif;
-            animation: fadeIn 1s ease-in-out;
+            background-color: #2f3136;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
-        }
-        .fade-in-section {
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .fade-in-section.visible {
+        .container.show {
             opacity: 1;
             transform: translateY(0);
+        }
+        /* Navigation */
+        .navbar {
+            background-color: #36393f;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: #7289da;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: #40444b;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .profile.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .profile img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        .section {
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h3 {
+            border-bottom: 2px solid #7289da;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container mx-auto px-4">
-        <!-- Navbar -->
-        <nav class="bg-[#313338] p-4 rounded-lg flex justify-between items-center shadow-lg hover-scale">
-            <h1 class="text-2xl font-bold text-[#7289da]">GlowKathi</h1>
-            <div class="space-x-6">
-                <a href="/index" class="text-[#7289da] hover:underline">Home</a>
-                <a href="/pages/team.html" class="text-[#7289da] hover:underline">Team</a>
-                <a href="/pages/virale-clips.html" class="text-[#7289da] hover:underline">Virale Clips</a>
-                <a href="/pages/ideen.html" class="text-[#7289da] hover:underline">Ideen</a>
-            </div>
-        </nav>
-
-        <!-- Profil -->
-        <div class="fade-in-section flex items-center bg-[#313338] p-6 mt-6 rounded-lg shadow-lg hover-scale">
-            <img src="assets/img/glowkathi.png" alt="GlowKathi" class="w-24 h-24 rounded-full border-4 border-[#7289da] glow">
-            <div class="ml-4">
-                <h2 class="text-xl font-bold text-[#7289da]">GlowKathi</h2>
-                <p><strong>Geburtsort:</strong> Österreich</p>
-                <p><strong>Bekannt durch:</strong> Minecraft, Valorant, Just Chatting</p>
-                <p><strong>Beigetreten:</strong> 9. September 2023</p>
-                <p><strong>Durchschnittliche Zuschauer:</strong> 64</p>
-            </div>
-        </div>
-
-        <!-- Sektionen -->
-        <div class="mt-8 space-y-6">
-            <section class="fade-in-section bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
-                <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Karriere</h3>
-                <p>GlowKathi begann am 9. September 2023 mit dem Streaming auf Twitch und hat seitdem eine stetig wachsende Community aufgebaut.</p>
-            </section>
-
-            <section class="fade-in-section bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
-                <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Virale Clips</h3>
-                <ul>
-                    <li><strong>"Bin am schwitzen digga"</strong> – Just Chatting, 13. Mai 2024</li>
-                    <li><strong>"Huy W"</strong> – Minecraft, 13. Mai 2024</li>
-                </ul>
-            </section>
-
-            <section class="fade-in-section bg-[#313338] p-6 rounded-lg shadow-lg hover-scale">
-                <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Social Media</h3>
-                <div class="flex space-x-4">
-                    <a href="https://www.twitch.tv/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Twitch</a>
-                    <a href="https://twitter.com/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Twitter</a>
-                    <a href="https://www.instagram.com/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Instagram</a>
-                    <a href="https://www.tiktok.com/@glowkathi" target="_blank" class="text-[#7289da] hover:underline">TikTok</a>
-                </div>
-            </section>
-        </div>
+<div class="container navbar">
+    <a href="/index">Home</a>
+    <a href="/pages/team.html">Team</a>
+    <a href="/pages/virale-clips.html">Virale Clips</a>
+    <a href="/pages/ideen.html">Ideen</a>
+</div>
+<div class="container profile">
+    <img src="assets/img/glowkathi.png" alt="GlowKathi">
+    <div class="info">
+        <h2>GlowKathi</h2>
+        <p><strong>Geburtsort:</strong> Österreich</p>
+        <p><strong>Bekannt durch:</strong> Minecraft, Valorant, Just Chatting</p>
+        <p><strong>Beigetreten:</strong> 9. September 2023</p>
+        <p><strong>Aktuelle Zuschauerzahlen:</strong> 64 gleichzeitige Zuschauer (Durchschnitt)</p>
     </div>
+</div>
+<div class="container section">
+    <h3>Karriere</h3>
+    <p>GlowKathi begann am 9. September 2023 mit dem Streaming auf Twitch...</p>
+</div>
+<div class="container section">
+    <h3>Virale Clips</h3>
+    <ul>
+        <li><strong>"Bin am schwitzen digga"</strong> – ein Clip aus einem "Just Chatting"-Stream vom 13. Mai 2024</li>
+        <li><strong>"Huy W"</strong> – ein Clip aus einem "Minecraft"-Stream vom 13. Mai 2024</li>
+    </ul>
+</div>
+<div class="container section">
+    <h3>Inhalt und Stil</h3>
+    <p>GlowKathi beschreibt sich selbst als "coole 17-jährige österreichische Streamerin"...</p>
+</div>
+<div class="container section">
+    <h3>Präsenz auf sozialen Medien</h3>
+    <p>Neben Twitch ist GlowKathi auch auf anderen Plattformen wie Instagram, TikTok und Twitter aktiv...</p>
+</div>
+<div class="container section">
+    <h3>Einflüsse und Inspirationen</h3>
+    <p>GlowKathi orientiert sich an bekannten Streamern und Content-Creatorn...</p>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let elements = document.querySelectorAll(".container, .profile, .section");
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
+    });
+</script>
 </body>
 </html>
