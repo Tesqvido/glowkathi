@@ -163,6 +163,26 @@
         </a><br>
     </div>
 </div>
+<script>
+(function() {
+    let devtoolsOpen = false;
 
+    function checkDevTools() {
+        const start = performance.now();
+        debugger;  // Bricht das Skript ab, wenn DevTools offen sind
+        const end = performance.now();
+        
+        if (end - start > 100) {
+            devtoolsOpen = true;
+            document.body.innerHTML = ""; // Seite leer machen
+            window.close(); // Versucht, das Fenster zu schließen
+        }
+    }
+
+    setInterval(checkDevTools, 1000); // Alle 1 Sekunde prüfen
+})();
+</script>
+
+    
 </body>
 </html>
