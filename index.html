@@ -4,165 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlowKathi - Twitch Streamerin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #2f3136;
+            background-color: #2b2d31;
             color: white;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Navigation */
-        .navbar {
-            background-color: #36393f;
-            padding: 10px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar a {
-            color: #7289da;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 28px;  /* Schriftgröße vergrößert */
-            font-weight: bold;  /* Fett für bessere Sichtbarkeit */
-        }
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            border-radius: 8px;
-            background-color: #40444b;
-            padding: 20px;
-        }
-        .profile img {
-            border-radius: 50%;
-            margin-right: 20px;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-        }
-        .profile .info {
-            flex: 1;
-        }
-        .profile .info h2 {
-            margin: 0;
-            color: #7289da;
-        }
-        .profile .info p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        .section {
-            margin-top: 30px;
-        }
-        .section h3 {
-            border-bottom: 2px solid #7289da;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        .links a {
-            display: inline-block;
-            margin: 10px 0;
-            color: #7289da;
-            text-decoration: none;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        .links img {
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
+            font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
 <body>
+    <div class="container mx-auto px-4">
+        <!-- Navbar -->
+        <nav class="bg-[#313338] p-4 rounded-lg flex justify-between items-center shadow-lg">
+            <h1 class="text-2xl font-bold text-[#7289da]">GlowKathi</h1>
+            <div class="space-x-6">
+                <a href="/index" class="text-[#7289da] hover:underline">Home</a>
+                <a href="/pages/team.html" class="text-[#7289da] hover:underline">Team</a>
+                <a href="/pages/virale-clips.html" class="text-[#7289da] hover:underline">Virale Clips</a>
+                <a href="/pages/ideen.html" class="text-[#7289da] hover:underline">Ideen</a>
+            </div>
+        </nav>
 
-<!-- Navigation Bar im Header-Container -->
-<div class="container">
-    <div class="navbar">
-        <a href="/index">Home</a>
-        <a href="/pages/team.html">Team</a>
-        <a href="/pages/virale-clips.html">Virale Clips</a>
-        <a href="/pages/ideen.html">Ideen</a>
-    </div>
-</div>
+        <!-- Profil -->
+        <div class="flex items-center bg-[#313338] p-6 mt-6 rounded-lg shadow-lg">
+            <img src="assets/img/glowkathi.png" alt="GlowKathi" class="w-24 h-24 rounded-full border-4 border-[#7289da]">
+            <div class="ml-4">
+                <h2 class="text-xl font-bold text-[#7289da]">GlowKathi</h2>
+                <p><strong>Geburtsort:</strong> Österreich</p>
+                <p><strong>Bekannt durch:</strong> Minecraft, Valorant, Just Chatting</p>
+                <p><strong>Beigetreten:</strong> 9. September 2023</p>
+                <p><strong>Durchschnittliche Zuschauer:</strong> 64</p>
+            </div>
+        </div>
 
-<div class="container">
-    <div class="profile">
-        <!-- Platzhalter für das Bild der Streamerin -->
-        <img src="assets/img/glowkathi.png" alt="GlowKathi">
-        <div class="info">
-            <h2>GlowKathi</h2>
-            <p><strong>Geburtsort:</strong> Österreich</p>
-            <p><strong>Bekannt durch:</strong> Minecraft, Valorant, Just Chatting</p>
-            <p><strong>Beigetreten:</strong> 9. September 2023</p>
-            <p><strong>Aktuelle Zuschauerzahlen:</strong> 64 gleichzeitige Zuschauer (Durchschnitt)</p>
+        <!-- Sektionen -->
+        <div class="mt-8 space-y-6">
+            <section class="bg-[#313338] p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Karriere</h3>
+                <p>GlowKathi begann am 9. September 2023 mit dem Streaming auf Twitch und hat seitdem eine stetig wachsende Community aufgebaut.</p>
+            </section>
+
+            <section class="bg-[#313338] p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Virale Clips</h3>
+                <ul>
+                    <li><strong>"Bin am schwitzen digga"</strong> – Just Chatting, 13. Mai 2024</li>
+                    <li><strong>"Huy W"</strong> – Minecraft, 13. Mai 2024</li>
+                </ul>
+            </section>
+
+            <section class="bg-[#313338] p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-bold text-[#7289da] border-b pb-2">Social Media</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.twitch.tv/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Twitch</a>
+                    <a href="https://twitter.com/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Twitter</a>
+                    <a href="https://www.instagram.com/glowkathi" target="_blank" class="text-[#7289da] hover:underline">Instagram</a>
+                    <a href="https://www.tiktok.com/@glowkathi" target="_blank" class="text-[#7289da] hover:underline">TikTok</a>
+                </div>
+            </section>
         </div>
     </div>
-
-    <div class="section">
-        <h3>Karriere</h3>
-        <p>GlowKathi begann am 9. September 2023 mit dem Streaming auf Twitch. Seitdem konnte sie eine treue Fangemeinde gewinnen, die stetig wächst. Sie streamt regelmäßig Inhalte aus verschiedenen Kategorien, darunter Videospiele und Unterhaltungsformate.</p>
-        <p>Im Zeitraum vom 12. November 2024 bis zum 12. Dezember 2024 konnte sie 98 neue Follower gewinnen, erreichte 888 Zuschauerstunden und hatte bis zu 47 gleichzeitige Zuschauer. In dieser Zeit war sie insgesamt 41 Stunden live. In den letzten 30 Tagen vor dem 12. Dezember 2024 streamte sie insgesamt 31 Stunden und 40 Minuten, gewann 107 neue Follower und erreichte einen Spitzenwert von 64 gleichzeitigen Zuschauern.</p>
-        <p>Sie hat auch eine Katze Namens Skye.</p>
-    </div>
-
-    <div class="section">
-        <h3>Virale Clips</h3>
-        <ul>
-            <li><strong>"Bin am schwitzen digga"</strong> – ein Clip aus einem "Just Chatting"-Stream vom 13. Mai 2024</li>
-            <li><strong>"Huy W"</strong> – ein Clip aus einem "Minecraft"-Stream vom 13. Mai 2024</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h3>Inhalt und Stil</h3>
-        <p>GlowKathi beschreibt sich selbst als "coole 17-jährige österreichische Streamerin" und unterhält ihre Community mit einem interaktiven und humorvollen Stil. Sie ist bekannt für ihre direkte und authentische Art, die ihre Zuschauer schätzen. Ihre Streams bestehen aus einer Mischung aus Gaming, Reaktionen auf Inhalte und Gesprächen mit ihrer Community.</p>
-    </div>
-
-    <div class="section">
-        <h3>Präsenz auf sozialen Medien</h3>
-        <p>Neben Twitch ist GlowKathi auch auf anderen Plattformen wie Instagram, TikTok und Twitter aktiv, wo sie regelmäßig Inhalte teilt und mit ihrer Community interagiert. Ihre Followerzahlen auf diesen Plattformen wachsen stetig.</p>
-    </div>
-
-    <div class="section">
-        <h3>Einflüsse und Inspirationen</h3>
-        <p>GlowKathi orientiert sich an bekannten Streamern und Content-Creatorn, wobei sie ihren eigenen Stil entwickelt hat. Ihr Content-Mix aus Unterhaltung und Gaming erinnert an etablierte deutschsprachige Twitch-Persönlichkeiten, bleibt jedoch durch ihre persönliche Note einzigartig.</p>
-    </div>
-
-    <div class="section links">
-        <h3>Weblinks</h3>
-        <a href="https://www.discord.gg/gGGjHBb9e9" target="_blank">
-            <img src="assets/img/discord-logo.png" alt="Discord Logo"> Offizieller Discord-Server
-        </a><br>
-        <a href="https://www.twitch.tv/glowkathi" target="_blank">
-            <img src="assets/img/twitch-logo.png" alt="Twitch Logo"> Offizieller Twitch-Kanal
-        </a><br>
-        <a href="https://twitter.com/glowkathi" target="_blank">
-            <img src="assets/img/twitter-logo.png" alt="Twitter Logo"> Offizieller Twitter-Account
-        </a><br>
-        <a href="https://www.instagram.com/glowkathi" target="_blank">
-            <img src="assets/img/instagram-logo.png" alt="Instagram Logo"> Offizieller Instagram-Account
-        </a><br>
-        <a href="https://www.tiktok.com/@glowkathi" target="_blank">
-            <img src="assets/img/tiktok-logo.png" alt="TikTok Logo"> Offizieller TikTok-Account
-        </a><br>
-    </div>
-</div>
 </body>
 </html>
